@@ -6,14 +6,23 @@
 const bookmarks = (function (){
 
     function handleAddButtonClicked() {
-
+        $('.add-bookmark').click(function(event){
+            
+        });
     }
     
     function render() {
         let bookmarks = store.items;
+
+
+    }
+
+    function bindEventListeners(){
+        handleAddButtonClicked();
     }
 
     return {
-        render: render,
+        bindEventListeners,
+        render,
     };
 }());
