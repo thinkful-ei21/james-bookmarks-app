@@ -13,7 +13,7 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     padding: 20px;
-    background-color: #72A0C7;
+    background-color: #E8DEBE;
 }
 
 .select, .add-bookmark {
@@ -35,6 +35,7 @@ li {
     padding: 20px;
     margin: 10px auto;
     border-radius: 10px;
+    background-color: rgb(255, 255, 255);
 }
 .article-title {
     text-align: top;
@@ -52,5 +53,7 @@ li {
     text-align: left;
 }
 
-
-
+.add-bookmark {
+    background-color: rgb(210, 217, 219);
+    border-radius: 5px;
+}
