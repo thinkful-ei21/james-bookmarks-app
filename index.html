@@ -10,19 +10,34 @@
 <body>
     <div class="container">
         <h1 class="title">My Bookmarks</h1>
-        <button type="button" class="add-bookmark">Add Bookmark</button>
-        <select name="text" id="Minimum rating" class="select">
-            <option value="Minimum rating" selected>Minimum rating</option>
-            <option value="5 Star">5 Stars</option>
-            <option value="4 Star">4 Stars</option>
-            <option value="3 Star">3 Stars</option>
-            <option value="2 Star">2 Stars</option>
-            <option value="1 Star">1 Star</option>
-        </select>
-        <div class="input-form" id="input-form">
-            <!-- <input type="text" name="article-title" class="article-title" placeholder="title of article">
-            <input type="text" name="article-url" class="article-url" placeholder="http://www.example.com"> -->
+        
+        <div class="filter-add-form">
+            <button type="button" class="add-bookmark">Add Bookmark</button>
+            <select name="text" id="Minimum rating" class="select">
+                <option value="Minimum rating" selected>Minimum rating</option>
+                <option value="5 Star">5 Stars</option>
+                <option value="4 Star">4 Stars</option>
+                <option value="3 Star">3 Stars</option>
+                <option value="2 Star">2 Stars</option>
+                <option value="1 Star">1 Star</option>
+            </select>
         </div>
+        <!-- <div class="input-form" id="input-form">
+            <div class="article-title-container">
+                <label for="article-title" class="title-label">Title:</label>
+                <input type="text" name="article-title" class="article-title" placeholder="title of article">
+            </div>
+
+            <div class="article-url-container">
+                <label for="article-url" class="url-label">Url:</label>
+                <input type="text" name="article-url" class="article-url" placeholder="http://www.example.com">
+            </div>
+
+            <div>
+                <label for="desc-box" class="desc-box">Description:</label>
+                <input type="text" name="desc-box" class="desc-box" placeholder="Insert description text here">
+            </div>
+        </div> -->
 
         <ul class="bookmarks js-bookmarks">
             <!-- <li class="bookmark">

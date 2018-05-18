@@ -19,8 +19,15 @@ body {
     height: 30px;
 }
 
+.filter-add-form {
+    margin: 20px;
+}
+
+div > label, input {
+    margin-bottom: 10px;
+}
+
 .article-title {
-    display: block;
     text-align: top;
 }
 
@@ -30,6 +37,10 @@ body {
 
 .bookmarks > li {
     border: 1px solid black;
+}
+
+#input-form {
+    text-align: left;
 }
 
 
