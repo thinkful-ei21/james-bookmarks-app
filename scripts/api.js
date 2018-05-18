@@ -25,15 +25,15 @@ const api = (function(){
         });
     }
 
-    function updateBookmark(id, updateData, callback) {
-        $.ajax({
-            url: `${BASE_URL}/bookmarks`,
-            method: 'PATCH',
-            contentType: 'application/json',
-            data: updateData,
-            success: callback,
-        });
-    }
+    // function updateBookmark(id, updateData, callback) {
+    //     $.ajax({
+    //         url: `${BASE_URL}/bookmarks`,
+    //         method: 'PATCH',
+    //         contentType: 'application/json',
+    //         data: updateData,
+    //         success: callback,
+    //     });
+    // }
 
     function deleteBookmark(id, callback) {
         $.ajax({
@@ -47,7 +47,6 @@ const api = (function(){
     return {
         getBookmarks,
         createNewBookmark,
-        updateBookmark,
         deleteBookmark,
     };
 
