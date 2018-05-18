@@ -26,7 +26,15 @@ body {
 div > label, input {
     margin-bottom: 10px;
 }
+ul {
+    padding: 20px;
+}
 
+li {
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
 .article-title {
     text-align: top;
 }

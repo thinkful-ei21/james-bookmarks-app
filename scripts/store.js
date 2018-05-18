@@ -14,6 +14,12 @@ const store = (function (){
         return this.items.find(item => item.id === id);
     }
 
+    function toggleExpanded(id) {
+        const item = this.findById(id);
+        console.log(item);
+        item.expanded = !item.expanded;
+    }
+
 
 
     return {
@@ -22,6 +28,7 @@ const store = (function (){
         toggleAddingBookmark,
         addItem,
         findById,
+        toggleExpanded,
     };
 
 }());
