@@ -65,6 +65,7 @@ const bookmarks = (function (){
             
             api.createNewBookmark(title, url, desc, rating, newBookmark =>{
                 store.addItem(newBookmark);
+                render();
             });
             event.target.reset();
         });

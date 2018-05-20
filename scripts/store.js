@@ -16,7 +16,6 @@ const store = (function (){
 
     function toggleExpanded(id) {
         const item = this.findById(id);
-        console.log(item);
         item.expanded = !item.expanded;
     }
 
