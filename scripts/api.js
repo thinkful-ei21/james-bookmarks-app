@@ -16,8 +16,6 @@ const api = (function(){
             rating: rating,
         });
 
-        console.log(title, url, desc, rating);
-
         $.ajax({
             url: `${BASE_URL}/bookmarks`,
             method: 'POST',

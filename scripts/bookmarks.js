@@ -14,6 +14,9 @@ const bookmarks = (function (){
                 <div class="bookmark-url">${item.url}</div>
                 <div class="bookmark-desc">${item.desc}</div>
                 <div class="bookmark-rating">${item.rating} Stars</div>
+                <button class="delete-bookmark js-bookmark-delete">
+                    <span class="delete-button-label">Delete</span>
+                </button>
             </div>
         </li>`;
         } else {
@@ -21,6 +24,9 @@ const bookmarks = (function (){
                     <div class="">
                         <div class="bookmark-title">${item.title}</div>
                         <div class="bookmark-rating">${item.rating} Stars</div>
+                        <button class="delete-bookmark js-bookmark-delete">
+                            <span class="delete-button-label">Delete</span>
+                        </button>
                     </div>
                 </li>`;
         }
@@ -41,14 +47,8 @@ const bookmarks = (function (){
 
     function handleDiscardButton(){
         $('.addbookmark-form-container').on('click', '.discard-button', function(event) {
-            // console.log('delete button clicked');
-        });
-    }
-
-    
-    function handleAddToListButtonClicked() {
-        $('.addbookmark-form-container').on('click', '.add-to-list', function(event){
-            // console.log('add to list clicked');
+            store.toggleAddingBookmark();
+            render();
         });
     }
 
@@ -61,8 +61,6 @@ const bookmarks = (function (){
             const desc = $(event.currentTarget).find('.article-desc').val();
             const rating = $(event.currentTarget).find('.article-rating').val();
 
-            console.log(desc, rating);
-            
             api.createNewBookmark(title, url, desc, rating, newBookmark =>{
                 store.addItem(newBookmark);
                 render();
@@ -80,7 +78,7 @@ const bookmarks = (function (){
     }
 
     function generateAddingNewBookmarkHtml(){
-        return `<form class="input-form" id="input-form">
+        return `<form class="input-form " id="input-form">
         <div class="article-title-container">
             <label for="article-title" class="title-label">Title:</label>
             <input type="text" name="article-title" class="article-title" placeholder="title of article">
@@ -115,6 +113,8 @@ const bookmarks = (function (){
 
         if (store.addingBookmark) {
             $('.addbookmark-form-container').html(generateAddingNewBookmarkHtml());
+        } else {
+            $('.addbookmark-form-container').html('');
         }
         const bookmarkString = generateBookmarksString(bookmarks);
 
@@ -124,7 +124,6 @@ const bookmarks = (function (){
     function bindEventListeners(){
         handleAddButtonClicked();
         handleDiscardButton();
-        handleAddToListButtonClicked();
         handleNewBookmarkSubmit();
         handleBookmarkClicked();
     }

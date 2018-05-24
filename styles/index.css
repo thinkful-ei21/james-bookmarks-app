@@ -57,3 +57,7 @@ li {
     background-color: rgb(210, 217, 219);
     border-radius: 5px;
 }
+
+.hidden {
+    display: none;
+}
