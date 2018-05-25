@@ -19,6 +19,14 @@ const store = (function (){
         item.expanded = !item.expanded;
     }
 
+    // function deleteItem(id) {
+    //     const item = this.findById(id);
+    //     this.items.splice(id, 1);
+    // }
+
+    const findAndDelete = function(id) {
+        this.items = this.items.filter(item => item.id !== id);
+    };
 
 
     return {
@@ -28,6 +36,7 @@ const store = (function (){
         addItem,
         findById,
         toggleExpanded,
+        findAndDelete,
     };
 
 }());

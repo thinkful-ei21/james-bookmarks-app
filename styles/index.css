@@ -4,6 +4,7 @@
 
 body {
     margin: 10px;
+    background-color: #00264d;
 }
 
 .container {
@@ -13,7 +14,7 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     padding: 20px;
-    background-color: #E8DEBE;
+    background-color: #004080;
 }
 
 .select, .add-bookmark {
@@ -35,7 +36,7 @@ li {
     padding: 20px;
     margin: 10px auto;
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: slategrey;
 }
 .article-title {
     text-align: top;

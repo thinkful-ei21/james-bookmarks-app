@@ -69,6 +69,16 @@ const bookmarks = (function (){
         });
     }
 
+    function handleDeleteButtonClick() {
+        $('.js-bookmarks').on('click', 'li', function(event) {
+            const bookmarkId = event.currentTarget.id;
+            api.deleteBookmark(bookmarkId, bookmark => {
+                store.findAndDelete(bookmarkId);
+                render();
+            });
+        });
+    }
+
     function handleBookmarkClicked() {
         $('ul').on('click', 'li', function(event) {
             const bookmarkId = $(event.currentTarget).attr('id');
@@ -76,6 +86,7 @@ const bookmarks = (function (){
             bookmarks.render();
         });
     }
+
 
     function generateAddingNewBookmarkHtml(){
         return `<form class="input-form " id="input-form">
@@ -126,6 +137,7 @@ const bookmarks = (function (){
         handleDiscardButton();
         handleNewBookmarkSubmit();
         handleBookmarkClicked();
+        handleDeleteButtonClick();
     }
 
     return {
