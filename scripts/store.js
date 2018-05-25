@@ -27,6 +27,7 @@ const store = (function (){
     return {
         items: [],
         addingBookmark: false,
+        minimumRating: 1,
         toggleAddingBookmark,
         addItem,
         findById,

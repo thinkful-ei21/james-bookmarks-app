@@ -62,11 +62,11 @@ const bookmarks = (function (){
             const rating = $(event.currentTarget).find('.article-rating').val();
             
             api.createNewBookmark(title, url, desc, rating, newBookmark =>{
-                try {
-                    Item.validateTitle(title);
-                } catch(error) {
-                    console.log(error);
-                }
+                // try {
+                //     Item.validateTitle(title);
+                // } catch(error) {
+                //     console.log(error);
+                // }
                 store.addItem(newBookmark);
                 render();
             });
@@ -104,7 +104,7 @@ const bookmarks = (function (){
 
         <div class="article-url-container">
             <label for="article-url" class="url-label">Url:</label>
-            <input type="text" name="article-url" class="article-url box" placeholder="http://www.example.com">
+            <input type="url" name="article-url" class="article-url box" placeholder="http://www.example.com">
         </div>
 
         <div>
@@ -125,9 +125,11 @@ const bookmarks = (function (){
     }
 
     function render() {
-        let bookmarks = store.items;
+        let bookmarks = store.items.filter(item => {
+            return item.rating >= store.minimumRating;
+        });
 
-        
+        // handleDropdownFilter();
 
         if (store.addingBookmark) {
             $('.addbookmark-form-container').html(generateAddingNewBookmarkHtml());
@@ -139,12 +141,21 @@ const bookmarks = (function (){
         $('.js-bookmarks').html(bookmarkString);
     }
 
+    function handleDropdownFilter() {
+        $('.select').change(function(event) {
+            const ratingFilter = $(event.currentTarget).val();
+            store.minimumRating = ratingFilter;
+            render();
+        });
+    }
+
     function bindEventListeners(){
         handleAddButtonClicked();
         handleDiscardButton();
         handleNewBookmarkSubmit();
         handleBookmarkClicked();
         handleDeleteButtonClick();
+        handleDropdownFilter();
     }
 
     return {
