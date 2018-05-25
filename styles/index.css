@@ -4,21 +4,37 @@
 
 body {
     margin: 10px;
-    background-color: #00264d;
+    background-color: #005ce6;
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+h1 {
+    color: black;
 }
 
 .container {
     text-align: center;
     max-width: 640px;
-    margin: 0 auto;
+    margin: 100px auto;
     border: 1px solid black;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #004080;
+    border-radius: 5px;
+    padding: 50px;
+    background-color: #339966; 
 }
 
 .select, .add-bookmark {
     height: 30px;
+}
+
+.add-to-list,.discard-button {
+    display: block;
+    width: 200px;
+    margin: 5px auto;
+    background: #262626;
+    /* color: #cccccc; */
+    color: white;
+    border: 1px solid black;
+    border-radius: 1px;
 }
 
 .filter-add-form {
@@ -28,6 +44,18 @@ body {
 div > label, input {
     margin-bottom: 10px;
 }
+
+div > .box {
+    border: 1px solid black;
+    border-radius: 0px;
+    height: 30px;
+    width: 175px;
+}
+
+div > input {
+    border: 1px solid black;
+    border-radius: 5px;
+}
 ul {
     padding: 20px;
 }
@@ -35,6 +63,7 @@ ul {
 li {
     padding: 20px;
     margin: 10px auto;
+    max-width: 500px;
     border-radius: 10px;
     background-color: slategrey;
 }

@@ -11,7 +11,7 @@ const bookmarks = (function (){
             return `<li class="bookmark" id="${item.id}">
             <div class="">
                 <div class="bookmark-title">${item.title}</div>
-                <div class="bookmark-url">${item.url}</div>
+                <a href="${item.url}">Visit Page</a>
                 <div class="bookmark-desc">${item.desc}</div>
                 <div class="bookmark-rating">${item.rating} Stars</div>
                 <button class="delete-bookmark js-bookmark-delete">
@@ -70,8 +70,10 @@ const bookmarks = (function (){
     }
 
     function handleDeleteButtonClick() {
-        $('.js-bookmarks').on('click', 'li', function(event) {
-            const bookmarkId = event.currentTarget.id;
+        $('.js-bookmarks').on('click', '.js-bookmark-delete', function(event) {
+            console.log(event.target);
+            const bookmarkId = $(event.currentTarget).closest('li').attr('id');
+            console.log(bookmarkId);
             api.deleteBookmark(bookmarkId, bookmark => {
                 store.findAndDelete(bookmarkId);
                 render();
@@ -92,22 +94,22 @@ const bookmarks = (function (){
         return `<form class="input-form " id="input-form">
         <div class="article-title-container">
             <label for="article-title" class="title-label">Title:</label>
-            <input type="text" name="article-title" class="article-title" placeholder="title of article">
+            <input type="text" name="article-title" class="article-title box" placeholder="title of bookmark">
         </div>
 
         <div class="article-url-container">
             <label for="article-url" class="url-label">Url:</label>
-            <input type="text" name="article-url" class="article-url" placeholder="http://www.example.com">
+            <input type="text" name="article-url" class="article-url box" placeholder="http://www.example.com">
         </div>
 
         <div>
             <label for="desc-box" class="desc-box">Description:</label>
-            <input type="text" name="desc-box" class="article-desc" placeholder="Insert description text here">
+            <input type="text" name="desc-box" class="article-desc box" placeholder="Description">
         </div>
 
         <div>
             <label for="rating-box" class="rating-box">Rating:</label>
-            <input type="text" name="rating-box" class="article-rating" placeholder="Rating 1 - 5">
+            <input type="text" name="rating-box" class="article-rating box" placeholder="Rating 1 - 5">
         </div>
 
         <div class="input-form-buttons">
