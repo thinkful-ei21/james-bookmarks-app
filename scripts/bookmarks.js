@@ -1,4 +1,4 @@
-/* global store, api */
+/* global store, api, Item */
 
 'use strict';
 
@@ -60,8 +60,13 @@ const bookmarks = (function (){
             const url = $(event.currentTarget).find('.article-url').val();
             const desc = $(event.currentTarget).find('.article-desc').val();
             const rating = $(event.currentTarget).find('.article-rating').val();
-
+            
             api.createNewBookmark(title, url, desc, rating, newBookmark =>{
+                try {
+                    Item.validateTitle(title);
+                } catch(error) {
+                    console.log(error);
+                }
                 store.addItem(newBookmark);
                 render();
             });
