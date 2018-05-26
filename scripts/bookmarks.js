@@ -97,25 +97,18 @@ const bookmarks = (function (){
 
     function generateAddingNewBookmarkHtml(){
         return `<form class="input-form " id="input-form">
-        <div class="article-title-container">
-            <label for="article-title" class="title-label">Title:</label>
-            <input type="text" name="article-title" class="article-title box" placeholder="title of bookmark">
-        </div>
+            <label for="article-title" class="title-label">Title</label>
+            <input type="text" name="article-title" class="article-title box" placeholder="title of bookmark" required>
+        
+            <label for="article-url" class="url-label">Url</label>
+            <input type="url" name="article-url" class="article-url box" placeholder="http(s)://" required>
+        
 
-        <div class="article-url-container">
-            <label for="article-url" class="url-label">Url:</label>
-            <input type="url" name="article-url" class="article-url box" placeholder="http://www.example.com">
-        </div>
+            <label for="desc-box" class="desc-box">Description</label>
+            <input type="text" name="desc-box" class="article-desc box" placeholder="Description" required>
 
-        <div>
-            <label for="desc-box" class="desc-box">Description:</label>
-            <input type="text" name="desc-box" class="article-desc box" placeholder="Description">
-        </div>
-
-        <div>
-            <label for="rating-box" class="rating-box">Rating:</label>
-            <input type="text" name="rating-box" class="article-rating box" placeholder="Rating 1 - 5">
-        </div>
+            <label for="rating-box" class="rating-box">Rating</label>
+            <input type="number" min="1" max="5" name="rating-box" class="article-rating box" required>
 
         <div class="input-form-buttons">
             <button class="discard-button">Discard</button>

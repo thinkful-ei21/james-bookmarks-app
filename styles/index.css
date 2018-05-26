@@ -6,7 +6,7 @@ body {
     margin: 10px;
     /* background-color: #005ce6; */
     background-color: #d9d9d9;
-    font-family: 'Ropa Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -31,33 +31,32 @@ h1 {
     display: block;
     width: 200px;
     margin: 5px auto;
-    background: #262626;
-    /* color: #cccccc; */
-    color: white;
+    background: #cc9b3b;
+    color: black;
     border: 1px solid black;
-    border-radius: 1px;
+    border-radius: 5px;
 }
 
 .filter-add-form {
     margin: 20px;
 }
 
-div > label, input {
+label, input {
     display: block;
-    margin-bottom: 10px;
+    margin: 10px auto;
 }
 
-div > .box {
-    border: 1px solid black;
-    border-radius: 0px;
-    height: 30px;
-    width: 175px;
-}
-
-div > input {
+/* div > .box {
     border: 1px solid black;
     border-radius: 5px;
-}
+    height: 30px;
+    width: 175px;
+} */
+
+/* div > input {
+    border: 1px solid black;
+    border-radius: 5px;
+} */
 ul {
     padding: 20px;
 }
@@ -67,7 +66,7 @@ li {
     margin: 10px auto;
     max-width: 500px;
     border-radius: 10px;
-    background-color: slategrey;
+    background-color: #d3dfe5;
 }
 .article-title {
     text-align: top;
@@ -82,14 +81,10 @@ li {
 }
 
 #input-form {
-    text-align: left;
+    text-align: center;
 }
 
 .add-bookmark {
     background-color: rgb(210, 217, 219);
     border-radius: 5px;
-}
-
-.hidden {
-    display: none;
 }
