@@ -4,13 +4,13 @@
 
 body {
     margin: 10px;
-    /* background-color: #005ce6; */
-    background-color: #d9d9d9;
+    background-color: #77C9D4;
     font-family: 'Roboto', sans-serif;
+    /* color: #bfccc8; */
 }
 
 h1 {
-    color: white;
+    color: black;
 }
 
 .container {
@@ -20,18 +20,35 @@ h1 {
     border: 1px solid black;
     border-radius: 5px;
     padding: 50px;
-    background-color: #339966; 
+    background-color: #57BC90; 
 }
 
 .select, .add-bookmark {
     height: 30px;
+    background-color: #ff9f2b;
+    border: 1px solid black;
 }
+
+button.add-bookmark {
+    background-color: #ff9f2b;
+    border: 1px solid black;
+}
+
+.delete-bookmark {
+    background-color: #ff9f2b;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+}
+
+
 
 .add-to-list,.discard-button {
     display: block;
     width: 200px;
     margin: 5px auto;
-    background: #cc9b3b;
+    background: #ff9f2b;
     color: black;
     border: 1px solid black;
     border-radius: 5px;
@@ -46,17 +63,6 @@ label, input {
     margin: 10px auto;
 }
 
-/* div > .box {
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 30px;
-    width: 175px;
-} */
-
-/* div > input {
-    border: 1px solid black;
-    border-radius: 5px;
-} */
 ul {
     padding: 20px;
 }
@@ -66,7 +72,8 @@ li {
     margin: 10px auto;
     max-width: 500px;
     border-radius: 10px;
-    background-color: #d3dfe5;
+    background-color: #015249;
+    color: white;
 }
 .article-title {
     text-align: top;
@@ -87,4 +94,23 @@ li {
 .add-bookmark {
     background-color: rgb(210, 217, 219);
     border-radius: 5px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    background: #ff9f2b;
+}
+
+a:hover {
+    color: red;
+}
+
+.bookmark-info {
+    padding: 5px;
 }
