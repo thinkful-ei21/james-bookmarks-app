@@ -10,10 +10,10 @@ const bookmarks = (function (){
 
             return `<li class="bookmark" id="${item.id}">
             <div class="">
-                <div class="bookmark-title bookmark-info">${item.title}</div>
-                <a href="${item.url}" class="bookmark-info" target="_blank">Visit Page</a>
-                <div class="bookmark-desc bookmark-info">${item.desc}</div>
-                <div class="bookmark-rating bookmark-info">${item.rating} Stars</div>
+            <div class="bookmark-title bookmark-info">${item.title}</div>
+            <div class="bookmark-desc bookmark-info">${item.desc}</div>
+            <div class="bookmark-rating bookmark-info">${item.rating} Stars</div>
+            <a href="${item.url}" class="bookmark-info" target="_blank">Visit Page</a>
                 <button class="delete-bookmark js-bookmark-delete">
                     <span class="delete-button-label">Delete</span>
                 </button>
